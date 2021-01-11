@@ -1,0 +1,28 @@
+table {
+  border: 1px solid black;
+  margin: 1rem;
+}
+
+th,
+tr,
+td {
+  border: 1px solid black;
+}
+
+th {
+  width: 200px;
+}
+
+.search {
+  border: 1px solid black;
+  margin: 1rem;
+}
+
+.tapp {
+  border: 1px solid black;
+  margin: 1rem;
+}
+
+.searchinput {
+  margin: 1rem;
+}
