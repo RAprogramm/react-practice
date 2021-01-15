@@ -1,14 +1,11 @@
-import FilterableProductTable from './components/FilterableProductTable/FilterableProductTable'
-import PRODUCTS from './list'
-
+import React from 'react'
+import ProductListApp from './components/FilterableProductTable/ProductListApp'
 import './App.css'
 
-function App() {
+export default function App() {
   return (
-    <div className='App'>
-      <FilterableProductTable products={PRODUCTS} />
+    <div>
+      <ProductListApp />
     </div>
   )
 }
-
-export default App

@@ -26,3 +26,17 @@ th {
 .searchinput {
   margin: 1rem;
 }
+
+.addrow {
+  border: 1px solid black;
+  margin: 1rem;
+  padding: 1rem;
+}
+
+.total {
+  border: 1px solid black;
+  margin: 1rem auto;
+  padding-right: 1rem;
+  padding-left: 1rem;
+  width: fit-content;
+}
