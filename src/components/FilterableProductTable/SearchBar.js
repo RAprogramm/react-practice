@@ -1,36 +1,19 @@
 import React from 'react'
+import {Field, reduxForm} from 'redux-form'
 
-function SearchBar(props) {
-  const filterText = props.filterText
-  const inStockOnly = props.inStockOnly
-  
-  const handleFilterChange = (event) => {
-    props.onFilterChange(event.target.value)
-  }
-  
-  const handleInStockChange = (event) => {
-    props.onInStockChange(event.target.checked)
-  }
+function SearchBar() {
   return (
-    <div className='search'>
-      <input
-        className='searchinput'
+    <form className='search'>
+      <h3>Search bar</h3>
+      <Field
+        className="searchInput"
+        component='input'
         type='text'
-        placeholder='Search...'
-        value={filterText}
-        onChange={handleFilterChange}
+        placeholder={'Filter...'}
+        name='filter'
       />
-      <p>
-        <input
-          type='checkbox'
-          checked={inStockOnly}
-          onChange={handleInStockChange}
-        />
-        {''}
-        Only show products in stock
-      </p>
-    </div>
+    </form>
   )
 }
 
-export default SearchBar
+export default reduxForm ({form: 'input'}) (SearchBar)

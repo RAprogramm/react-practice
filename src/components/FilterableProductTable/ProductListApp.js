@@ -1,92 +1,62 @@
-import React, {useState} from 'react'
+import React from 'react'
 import ProductTable from './ProductTable'
-import TotalPrice from './TotalPrice'
 import SearchBar from './SearchBar'
+import {connect} from 'react-redux'
+import ProductForm from './ProductAddForm/ProductForm'
 import './styleFPT.css'
+import {createPost} from '../../redux/actions'
 
-function ProductListApp() {
-  const [filterText, setFilterText] = useState('')
-  const [inStockOnly, setInStockOnly] = useState(false)
-  const [prodList, setProdList] = useState([])
-  const [inputValues, setInputValues] = useState({
-    name: '',
-    price: '',
-    category: null
-  })
-
-  const onHandleInput = (event) => {
-    const {name, value} = event.target
-    setInputValues(({...inputValues, [name]: value}))
+const ProductListApp = props => {
+  const products = props.syncProds
+  const inputValues = props.inputValue
+  
+  const submit = () => {
+    const newProduct = {
+      id: Date.now().toString(),
+      name: inputValues.values.name,
+      price: inputValues.values.price,
+    }
+    props.createPost(newProduct)
+    return newProduct
   }
-
-  const onSubmitHandler = (event) => {
-    event.preventDefault()
-    if (!inputValues.name.length) {
-      alert('Please, enter product name')
-    } else if (!inputValues.price.length) {
-      alert('Please, enter product price')
-    } else {
-      setProdList([...prodList, {
-        id: Date.now().toString(),
-        name: inputValues.name,
-        price: inputValues.price,
-        category: inputValues.category,
-      }])
+  
+  const getInitialValues = () => {
+    return {
+      id: Date.now().toString(),
+      name: '',
+      price: '',
+      filter: '',
     }
   }
   
-  const handleFilterTextChange = (filterText) => {
-    setFilterText(filterText)
-  }
-  
-  const handleInStockChange = (inStockOnly) => {
-    setInStockOnly(inStockOnly)
-  }
-
-  console.log(prodList)
-  console.log(inputValues)
   return (
     <div className='prodListApp'>
-      <form className='addrow' onSubmit={onSubmitHandler}>
-        <input
-          type='text'
-          placeholder={'name'}
-          name='name'
-          onChange={onHandleInput}
-        />
-        <input
-          type='number'
-          name='price'
-          onChange={onHandleInput}
-          placeholder={'price'}
-        />
-        <input
-          type='text'
-          name='category'
-          onChange={onHandleInput}
-          placeholder={'category'}
-        />
-        <button className='btn add' type='submit'>
-          Add
-        </button>
-      </form>
+      <h3>Product list application</h3>
+      <ProductForm
+        onSubmit={submit}
+        initialValues={getInitialValues()}
+      />
       <SearchBar
-        filterText={filterText}
-        inStockOnly={inStockOnly}
-        onFilterChange={handleFilterTextChange}
-        onInStockChange={handleInStockChange}
+        initialValues={getInitialValues()}
+        filterText={inputValues}
       />
       <ProductTable
-        products={prodList}
-        filterText={filterText}
-        inStockOnly={inStockOnly}
-      />
-      <TotalPrice
-        products={prodList}
-        filterText={filterText}
-        inStockOnly={inStockOnly}
+        products={products}
+        filterText={inputValues}
       />
     </div>
   )
 }
-export default ProductListApp
+
+const mapDispatchToProps = {
+  createPost,
+}
+
+const mapStateToProps = state => {
+  return {
+    syncProds: state.productsReducer.productReduxState,
+    inputValue: state.form.input
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps) (ProductListApp)
