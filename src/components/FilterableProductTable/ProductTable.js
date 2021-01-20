@@ -1,37 +1,31 @@
 import React from 'react'
-import ProductCategoryRow from './ProductCategoryRow'
 import ProductRow from './ProductRow'
 
 function ProductTable(props) {
   const filterText = props.filterText
-  const inStockOnly = props.inStockOnly
   const products = props.products
-
   const rows = []
-  let lastCategory = null
-
+  const total = []
+  
   products.forEach((product) => {
-    if (product.name.indexOf(filterText) === -1) {
+    if (product.name.indexOf(filterText.values.filter) === -1) {
       return
     }
-    if (inStockOnly && !product.stocked) {
-      return
-    }
-    if (product.category !== lastCategory) {
-      rows.push(
-        <ProductCategoryRow
-          category={product.category}
-          key={product.category}
-        />,
-      )
-    }
-    rows.push(<ProductRow product={product} key={product.id} />)
-    lastCategory = product.category
+    rows.push(
+      <ProductRow
+        product={product}
+        key={product.id}
+      />
+    )
+    total.push(parseFloat(product.price))
   })
-
+  
+  const result = total.reduce((sum, current) => sum + current, 0)
+  
   return (
-    <div>
-      <table>
+    <div className="productTable">
+      <h3 className="productTable_title">Product table</h3>
+      <table className="productTable_table">
         <thead>
           <tr>
             <th>ProductName</th>
@@ -40,6 +34,9 @@ function ProductTable(props) {
         </thead>
         <tbody>{rows}</tbody>
       </table>
+      <div className="productTable_total">
+        <h4>Total Price: {result}</h4>
+      </div>
     </div>
   )
 }

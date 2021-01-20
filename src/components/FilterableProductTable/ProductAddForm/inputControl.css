@@ -1,0 +1,46 @@
+@media only screen and (max-width: 600px) {
+    .errors {
+        font-size: 17px;
+        color: white;
+        text-shadow: 1px 1px 1px darkred;
+        margin: -2px;
+        padding: 3px;
+        background-color: rgb(255 0 0 / 50%);
+        left: 155px;
+        position: fixed;
+        border-radius: 10px;
+        font-style: italic;
+    }
+}
+
+@media only screen and (min-width: 600px) {
+    .errors {
+        font-size: 20px;
+        color: white;
+        text-shadow: 1px 1px 1px darkred;
+        margin: -4px;
+        padding: 3px;
+        background-color: rgb(255 0 0 / 50%);
+        left: 136px;
+        position: fixed;
+        border-radius: 10px;
+        font-style: italic;
+        z-index: 1000;
+    }
+}
+
+@media only screen and (min-width: 992px) {
+    .errors {
+        color: white;
+        text-shadow: 1px 1px 1px darkred;
+        margin: -7px;
+        padding: 5px;
+        background-color: rgb(255 0 0 / 50%);
+        left: 223px;
+        position: fixed;
+        border-radius: 10px;
+        font-style: italic;
+        font-size: 28px;
+        font-weight: bold;
+    }
+}
