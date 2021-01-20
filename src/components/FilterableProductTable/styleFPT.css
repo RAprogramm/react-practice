@@ -1,65 +1,404 @@
-table {
-  border: 1px solid gray;
-  margin: 1rem;
-  width: 91%;
-
+@media only screen and (max-width: 600px) {
+  body {
+    background-image: url("../../img/willian-justen-de-vasconcellos-T_Qe4QlMIvQ-unsplash.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100vh;
+    background-attachment: fixed;
+  }
+  .prodList {
+    border: 1px solid black;
+    border-radius: 30px;
+    box-shadow: 2px 2px 5px black;
+    background-color: rgba(222, 252, 252, .7);
+    width: 290px;
+    position: relative;
+    text-align: -webkit-center;
+    top: 5rem;
+    margin: auto;
+  }
+  .buttons {
+    display: flex;
+    justify-content: space-between;
+  }
+  .btn {
+    background: linear-gradient(#c8dbdb, #798888);
+    border-radius: 10px;
+    font-weight: bold;
+    font-style: italic;
+  }
+  #name {
+    margin-bottom: 5px;
+    border-radius: 10px;
+    padding-left: 15px;
+  }
+  #name:focus {
+    outline: none;
+    border: 2px solid orange;
+    box-shadow: 0 0 15px darkorange;
+  }
+  #price {
+    margin-bottom: 5px;
+    border-radius: 10px;
+    padding-left: 15px;
+  }
+  #price:focus {
+    outline: none;
+    border: 2px solid orange;
+    box-shadow: 0 0 15px darkorange;
+  }
+  .searchBar_input {
+    border-radius: 10px;
+    padding-left: 15px;
+  }
+  .searchBar_input:focus {
+    outline: none;
+    border: 2px solid orange;
+    box-shadow: 0 0 15px darkorange;
+  }
+  .productForm_add {
+    height: 25px;
+    width: 55px;
+    box-shadow: 0 3px 5px black;
+    margin-left: 4rem;
+  }
+  .productForm_add:focus {
+    outline: none;
+  }
+  .productForm_add:active {
+    outline: none;
+    background: linear-gradient(#c8dbdb, #798888);
+    box-shadow: 0 2px 3px black;
+  }
+  .productForm_reset {
+    height: 25px;
+    width: 55px;
+    box-shadow: 0 3px 5px black;
+    margin-right: 4rem;
+  }
+  .productForm_reset:focus {
+    outline: none;
+  }
+  .productForm_reset:active {
+    outline: none;
+    background: linear-gradient(#c8dbdb, #798888);
+    box-shadow: 0 2px 3px black;
+  }
+  .productTable {
+    width: auto;
+    height: max-content;
+  }
+  .productTable_table {
+    display: inline-table;
+    width: inherit;
+  }
+  .productTable_total {
+    display: flex;
+    justify-content: center;
+  }
 }
 
-th,
-tr,
-td {
-  border: 1px solid gray;
+tr {
+  text-align: -webkit-center;
+}
+.delete {
+  width: 54px;
+  height: 25px;
 }
 
-th {
-  width: 200px;
+@media only screen and (min-width: 600px) {
+  body {
+    background-image: url("../../img/willian-justen-de-vasconcellos-T_Qe4QlMIvQ-unsplash.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100vh;
+    background-attachment: fixed;
+  }
+  .prodList {
+    border: none;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+  }
+  .prodList_title {
+    border: 1px solid black;
+    border-radius: 30px;
+    box-shadow: 2px 2px 5px black;
+    background-color: rgba(222, 252, 252, .7);
+    position: absolute;
+    text-align: center;
+    width: 700px;
+    top: 0;
+  }
+  .btn {
+    background: linear-gradient(#c8dbdb, #798888);
+    border-radius: 10px;
+    font-weight: bold;
+    font-style: italic;
+  }
+  .productForm {
+    border: 1px solid black;
+    border-radius: 30px;
+    box-shadow: 2px 2px 5px black;
+    background-color: rgba(222, 252, 252, .7);
+    padding: 5px 20px 30px;
+    position: fixed;
+    left: 25px;
+    top: 60px;
+    height: 127px;
+  }
+  #name {
+    margin-bottom: 5px;
+    border-radius: 10px;
+    padding-left: 15px;
+  }
+  #name:focus {
+    outline: none;
+    border: 2px solid orange;
+    box-shadow: 0 0 15px darkorange;
+  }
+  #price {
+    margin-bottom: 5px;
+    border-radius: 10px;
+    padding-left: 15px;
+  }
+  #price:focus {
+    outline: none;
+    border: 2px solid orange;
+    box-shadow: 0 0 15px darkorange;
+  }
+  .productForm_add {
+    position: absolute;
+    left: 40px;
+    height: 30px;
+    width: 65px;
+    top: 120px;
+    box-shadow: 0 3px 5px black;
+  }
+  .productForm_add:focus {
+    outline: none;
+  }
+  .productForm_add:active {
+    outline: none;
+    background: linear-gradient(#c8dbdb, #798888);
+    box-shadow: 0 2px 3px black;
+  }
+  .productForm_reset {
+    position: absolute;
+    left: 125px;
+    height: 30px;
+    width: 65px;
+    top: 120px;
+    box-shadow: 0 3px 5px black;
+  }
+  .productForm_reset:focus {
+    outline: none;
+  }
+  .productForm_reset:active {
+    outline: none;
+    background: linear-gradient(#c8dbdb, #798888);
+    box-shadow: 0 2px 3px black;
+  }
+  .productForm_reset:hover {
+    outline: none;
+    box-shadow: 0 3px 5px black;
+  }
+  .searchBar {
+    border: 1px solid black;
+    border-radius: 30px;
+    box-shadow: 2px 2px 5px black;
+    background-color: rgba(222, 252, 252, .7);
+    position: fixed;
+    left: 25px;
+    top: 235px;
+    width: 230px;
+    height: 110px;
+  }
+  .searchBar_title {}
+  .searchBar_input {
+    border-radius: 10px;
+    padding-left: 15px;
+  }
+  .searchBar_input:focus {
+    outline: none;
+    border: 2px solid orange;
+    box-shadow: 0 0 15px darkorange;
+  }
+  .productTable {
+    border: 1px solid black;
+    border-radius: 30px;
+    box-shadow: 2px 2px 5px black;
+    background-color: rgba(222, 252, 252, .7);
+    position: absolute;
+    left: 275px;
+    top: 60px;
+    width: 455px;
+    height: max-content;
+  }
+  .productTable_table {
+    display: inline-table;
+    width: inherit;
+  }
 }
 
-.load {
-  margin: 1rem;
+@media only screen and (min-width: 992px) {
+  body {
+    background-image: url("../../img/willian-justen-de-vasconcellos-T_Qe4QlMIvQ-unsplash.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100vh;
+    background-attachment: fixed;
+  }
+  .prodList {
+    border: none;
+    display: flex;
+    justify-content: center;
+  }
+  .prodList_title {
+    border: 1px solid black;
+    border-radius: 30px;
+    box-shadow: 2px 2px 5px black;
+    background-color: rgba(222, 252, 252, .7);
+    position: absolute;
+    width: 1050px;
+    top: 20px;
+    font-size: 30px;
+  }
+  .btn {
+    background: linear-gradient(#c8dbdb, #798888);
+    border-radius: 10px;
+    font-weight: bold;
+    font-style: italic;
+  }
+  .productForm {
+    border: 1px solid black;
+    border-radius: 30px;
+    box-shadow: 2px 2px 5px black;
+    background-color: rgba(222, 252, 252, .7);
+    padding: 5px 20px 30px;
+    position: fixed;
+    left: 85px;
+    top: 150px;
+    height: 195px;
+    font-size: 23px;
+    width: 280px;
+  }
+  #name {
+    font-size: 19px;
+    margin-bottom: 5px;
+    border-radius: 10px;
+    padding-left: 15px;
+  }
+  #name:focus {
+    outline: none;
+    border: 2px solid orange;
+    box-shadow: 0 0 15px darkorange;
+  }
+  #price {
+    font-size: 19px;
+    margin-bottom: 5px;
+    border-radius: 10px;
+    padding-left: 15px;
+  }
+  #price:focus {
+    outline: none;
+    border: 2px solid orange;
+    box-shadow: 0 0 15px darkorange;
+  }
+  .productForm_add {
+    position: absolute;
+    left: 40px;
+    height: 40px;
+    width: 90px;
+    top: 170px;
+    font-size: 20px;
+    box-shadow: 0 3px 5px black;
+  }
+  .productForm_add:focus {
+    outline: none;
+  }
+  .productForm_add:active {
+    outline: none;
+    background: linear-gradient(#c8dbdb, #798888);
+    box-shadow: 0 2px 3px black;
+  }
+  .productForm_reset {
+    position: absolute;
+    left: 190px;
+    height: 40px;
+    width: 90px;
+    top: 170px;
+    font-size: 20px;
+    box-shadow: 0 3px 5px black;
+  }
+  .productForm_reset:focus {
+    outline: none;
+  }
+  .productForm_reset:active {
+    outline: none;
+    background: linear-gradient(#c8dbdb, #798888);
+    box-shadow: 0 2px 3px black;
+  }
+  .productForm_reset:hover {
+    outline: none;
+    box-shadow: 0 3px 5px black;
+  }
+  .searchBar {
+    border: 1px solid black;
+    border-radius: 30px;
+    box-shadow: 2px 2px 5px black;
+    background-color: rgba(222, 252, 252, .7);
+    position: fixed;
+    left: 85px;
+    top: 408px;
+    font-size: 23px;
+    width: 320px;
+    height: 160px;
+  }
+  .searchBar_input {
+    font-size: 19px;
+    margin-bottom: 5px;
+    border-radius: 10px;
+    padding-left: 15px;
+  }
+  .searchBar_input:focus {
+    outline: none;
+    border: 2px solid orange;
+    box-shadow: 0 0 15px darkorange;
+  }
+  .productTable {
+    border: 1px solid black;
+    border-radius: 30px;
+    box-shadow: 2px 2px 5px black;
+    background-color: rgba(222, 252, 252, .7);
+    position: absolute;
+    left: 500px;
+    top: 150px;
+    width: 620px;
+    height: max-content;
+    font-size: 23px;
+    padding-bottom: 25px;
+  }
+  .productTable_table {
+    display: inline-table;
+    width: inherit;
+  }
+  .productTable_total {
+    border: 1px solid black;
+    border-radius: 30px;
+    box-shadow: 2px 2px 5px black;
+    background-color: rgba(222, 252, 252, .7);
+    position: fixed;
+    left: 84px;
+    top: 600px;
+    font-size: 28px;
+    width: 320px;
+    height: 105px;
+  }
 }
 
-.fetched {
-  border: 1px solid black;
-  margin: 1rem;
-  padding: 1rem;
-}
 
-.fetched_input {
-  border: 1px solid black;
-  width: max-content;
-  padding: 0.5rem;
-}
 
-.search {
-  border: 1px solid black;
-  margin: 1rem;
-}
-
-.tapp {
-  border: 1px solid black;
-  margin: 1rem;
-}
-
-.productTable {
-  border: 1px solid black;
-  margin: 1rem;
-}
-
-.searchInput {
-  margin: 1rem;
-}
-
-.addRow {
-  border: 1px solid black;
-  margin: 1rem;
-  padding: 1rem;
-}
-
-.total {
-  border: 1px solid black;
-  margin: 1rem auto;
-  padding-right: 1rem;
-  padding-left: 1rem;
-  width: fit-content;
-}

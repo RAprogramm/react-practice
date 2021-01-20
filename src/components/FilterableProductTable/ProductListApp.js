@@ -3,8 +3,8 @@ import ProductTable from './ProductTable'
 import SearchBar from './SearchBar'
 import {connect} from 'react-redux'
 import ProductForm from './ProductAddForm/ProductForm'
-import './styleFPT.css'
 import {createPost} from '../../redux/actions'
+import './styleFPT.css'
 
 const ProductListApp = props => {
   const products = props.syncProds
@@ -30,8 +30,8 @@ const ProductListApp = props => {
   }
   
   return (
-    <div className='prodListApp'>
-      <h3>Product list application</h3>
+    <div className='prodList'>
+      <h3 className="prodList_title">Product list application</h3>
       <ProductForm
         onSubmit={submit}
         initialValues={getInitialValues()}

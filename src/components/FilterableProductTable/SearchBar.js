@@ -3,10 +3,10 @@ import {Field, reduxForm} from 'redux-form'
 
 function SearchBar() {
   return (
-    <form className='search'>
-      <h3>Search bar</h3>
+    <form className='searchBar'>
+      <h3 className="searchBar_title">Search bar</h3>
       <Field
-        className="searchInput"
+        className="searchBar_input"
         component='input'
         type='text'
         placeholder={'Filter...'}

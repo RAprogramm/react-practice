@@ -5,9 +5,10 @@ import {input} from './inputControl'
 
 function ProductForm(props) {
   return (
-    <form className='addRow' onSubmit={props.handleSubmit}>
-      <h3>Product form</h3>
+    <form className='productForm' onSubmit={props.handleSubmit}>
+      <h3 className="productForm_title">Product form</h3>
       <Field
+        className="productForm_field"
         component={input}
         type='text'
         placeholder={'Name...'}
@@ -15,26 +16,29 @@ function ProductForm(props) {
         id="name"
       />
       <Field
+        className="productForm_field"
         component={input}
         type='number'
         name='price'
         id="price"
         placeholder={'Price...'}
       />
-      <button
-        className='btn add'
-        type='submit'
-        disabled={!props.valid || props.pristine || props.submitting}
-      >
-        Add
-      </button>
-      <button
-        className="btn reset"
-        type="button"
-        onClick={props.reset}
-      >
-        Reset
-      </button>
+      <div className="buttons">
+        <button
+          className='btn productForm_add'
+          type='submit'
+          disabled={!props.valid || props.pristine || props.submitting}
+        >
+          Add
+        </button>
+        <button
+          className="btn productForm_reset"
+          type="button"
+          onClick={props.reset}
+        >
+          Reset
+        </button>
+      </div>
     </form>
   )
 }

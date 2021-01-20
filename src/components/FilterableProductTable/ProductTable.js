@@ -24,8 +24,8 @@ function ProductTable(props) {
   
   return (
     <div className="productTable">
-      <h3>Product table</h3>
-      <table className="table">
+      <h3 className="productTable_title">Product table</h3>
+      <table className="productTable_table">
         <thead>
           <tr>
             <th>ProductName</th>
@@ -34,7 +34,7 @@ function ProductTable(props) {
         </thead>
         <tbody>{rows}</tbody>
       </table>
-      <div className="total">
+      <div className="productTable_total">
         <h4>Total Price: {result}</h4>
       </div>
     </div>
