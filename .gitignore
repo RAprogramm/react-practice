@@ -1,6 +1,5 @@
 node_modules/
 .yarn/
-public/
 .idea/
 .git/
 .eslintcache
