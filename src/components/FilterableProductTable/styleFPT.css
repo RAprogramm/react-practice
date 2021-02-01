@@ -1,6 +1,11 @@
+.prodList_title {
+  width: 80vw;
+  margin: 1rem;
+}
+
 @media only screen and (max-width: 600px) {
   body {
-    background-image: url("../../img/willian-justen-de-vasconcellos-T_Qe4QlMIvQ-unsplash.jpg");
+    background-image: url('../../img/willian-justen-de-vasconcellos-T_Qe4QlMIvQ-unsplash.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -11,12 +16,22 @@
     border: 1px solid black;
     border-radius: 30px;
     box-shadow: 2px 2px 5px black;
-    background-color: rgba(222, 252, 252, .7);
+    background-color: rgba(222, 252, 252, 0.7);
     width: 290px;
-    position: relative;
-    text-align: -webkit-center;
-    top: 5rem;
+    position: absolute;
+    text-align: center;
+    top: 15%;
     margin: auto;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .prodList_title {
+    width: auto;
+  }
+  .noProducts {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    font-style: italic;
   }
   .buttons {
     display: flex;
@@ -27,6 +42,10 @@
     border-radius: 10px;
     font-weight: bold;
     font-style: italic;
+    cursor: pointer;
+  }
+  .btn:focus {
+    outline: none;
   }
   #name {
     margin-bottom: 5px;
@@ -37,6 +56,7 @@
     outline: none;
     border: 2px solid orange;
     box-shadow: 0 0 15px darkorange;
+    transition: 400ms;
   }
   #price {
     margin-bottom: 5px;
@@ -47,15 +67,52 @@
     outline: none;
     border: 2px solid orange;
     box-shadow: 0 0 15px darkorange;
+    transition: 400ms;
+  }
+
+  .searchBar_Show {
+    height: 90px;
+    transition: all 300ms ease-in-out;
+  }
+  .searchBar_Hide {
+    height: 20px;
+    transition: all 600ms ease-in-out;
+  }
+  @keyframes searchBarInput {
+    0% {
+      opacity: 0;
+    }
+    25% {
+      opacity: 0.25;
+    }
+    50% {
+      opacity: 0.5;
+    }
+    75% {
+      opacity: 0.75;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  .searchBar {
+    display: inline-grid;
+  }
+  .searchBar_title {
+    cursor: pointer;
+    transition: 1s;
   }
   .searchBar_input {
     border-radius: 10px;
     padding-left: 15px;
+    animation-name: searchBarInput;
+    animation-duration: 1s;
   }
   .searchBar_input:focus {
     outline: none;
     border: 2px solid orange;
     box-shadow: 0 0 15px darkorange;
+    transition: 400ms;
   }
   .productForm_add {
     height: 25px;
@@ -91,7 +148,8 @@
   }
   .productTable_table {
     display: inline-table;
-    width: inherit;
+    width: -webkit-fill-available;
+    width: -moz-available;
   }
   .productTable_total {
     display: flex;
@@ -109,28 +167,38 @@ tr {
 
 @media only screen and (min-width: 600px) {
   body {
-    background-image: url("../../img/willian-justen-de-vasconcellos-T_Qe4QlMIvQ-unsplash.jpg");
+    background-image: url('../../img/willian-justen-de-vasconcellos-T_Qe4QlMIvQ-unsplash.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
     height: 100vh;
     background-attachment: fixed;
   }
+  .mainProd1 {
+    display: flex;
+    justify-content: center;
+  }
+  .mainProd2 {
+    display: flex;
+    flex-direction: column;
+  }
   .prodList {
     border: none;
     text-align: center;
     display: flex;
     justify-content: center;
+    flex-direction: column;
   }
   .prodList_title {
     border: 1px solid black;
     border-radius: 30px;
     box-shadow: 2px 2px 5px black;
-    background-color: rgba(222, 252, 252, .7);
-    position: absolute;
+    background-color: rgba(222, 252, 252, 0.7);
+    position: relative;
     text-align: center;
-    width: 700px;
     top: 0;
+    width: inherit;
+    margin: 1rem 2rem 0rem 2rem;
   }
   .btn {
     background: linear-gradient(#c8dbdb, #798888);
@@ -138,21 +206,27 @@ tr {
     font-weight: bold;
     font-style: italic;
   }
+  .btn:focus {
+    outline: none;
+  }
   .productForm {
     border: 1px solid black;
     border-radius: 30px;
     box-shadow: 2px 2px 5px black;
-    background-color: rgba(222, 252, 252, .7);
+    background-color: rgba(222, 252, 252, 0.7);
     padding: 5px 20px 30px;
-    position: fixed;
-    left: 25px;
-    top: 60px;
-    height: 127px;
+    position: relative;
+    height: 30vh;
+    margin: 1rem;
+    width: 25vw;
+    display: flex;
+    flex-direction: column;
   }
   #name {
     margin-bottom: 5px;
     border-radius: 10px;
     padding-left: 15px;
+    width: 20vw;
   }
   #name:focus {
     outline: none;
@@ -163,18 +237,23 @@ tr {
     margin-bottom: 5px;
     border-radius: 10px;
     padding-left: 15px;
+    width: 20vw;
   }
   #price:focus {
     outline: none;
     border: 2px solid orange;
     box-shadow: 0 0 15px darkorange;
   }
+  .buttons {
+    margin-top: 0.2rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
   .productForm_add {
-    position: absolute;
-    left: 40px;
-    height: 30px;
-    width: 65px;
-    top: 120px;
+    position: inherit;
+    height: 3.5vh;
+    width: 11vw;
     box-shadow: 0 3px 5px black;
   }
   .productForm_add:focus {
@@ -186,11 +265,9 @@ tr {
     box-shadow: 0 2px 3px black;
   }
   .productForm_reset {
-    position: absolute;
-    left: 125px;
-    height: 30px;
-    width: 65px;
-    top: 120px;
+    position: inherit;
+    height: 3.5vh;
+    width: 11vw;
     box-shadow: 0 3px 5px black;
   }
   .productForm_reset:focus {
@@ -205,21 +282,30 @@ tr {
     outline: none;
     box-shadow: 0 3px 5px black;
   }
-  .searchBar {
+  .searchBar_Show {
     border: 1px solid black;
     border-radius: 30px;
     box-shadow: 2px 2px 5px black;
-    background-color: rgba(222, 252, 252, .7);
-    position: fixed;
-    left: 25px;
-    top: 235px;
-    width: 230px;
+    background-color: rgba(222, 252, 252, 0.7);
+    position: relative;
     height: 110px;
+    width: 25vw;
+    margin: 1rem;
   }
-  .searchBar_title {}
+  .searchBar_Hide {
+    border: 1px solid black;
+    border-radius: 30px;
+    box-shadow: 2px 2px 5px black;
+    background-color: rgba(222, 252, 252, 0.7);
+    position: relative;
+    height: 60px;
+    width: 25vw;
+    margin: 1rem;
+  }
   .searchBar_input {
     border-radius: 10px;
     padding-left: 15px;
+    width: 15vw;
   }
   .searchBar_input:focus {
     outline: none;
@@ -230,12 +316,23 @@ tr {
     border: 1px solid black;
     border-radius: 30px;
     box-shadow: 2px 2px 5px black;
-    background-color: rgba(222, 252, 252, .7);
-    position: absolute;
-    left: 275px;
-    top: 60px;
-    width: 455px;
+    background-color: rgba(222, 252, 252, 0.7);
+    position: relative;
+    width: 50vw;
     height: max-content;
+    margin: 1rem;
+  }
+  .noProducts {
+    border: 1px solid black;
+    border-radius: 30px;
+    box-shadow: 2px 2px 5px black;
+    background-color: rgba(222, 252, 252, 0.7);
+    position: relative;
+    width: 50vw;
+    height: 60px;
+    padding-top: 2rem;
+    font-style: italic;
+    margin: 1rem;
   }
   .productTable_table {
     display: inline-table;
@@ -245,27 +342,39 @@ tr {
 
 @media only screen and (min-width: 992px) {
   body {
-    background-image: url("../../img/willian-justen-de-vasconcellos-T_Qe4QlMIvQ-unsplash.jpg");
+    background-image: url('../../img/willian-justen-de-vasconcellos-T_Qe4QlMIvQ-unsplash.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
     height: 100vh;
     background-attachment: fixed;
+    font-size: x-large;
+  }
+  .mainProd1 {
+    display: flex;
+    justify-content: center;
+  }
+  .mainProd2 {
+    display: flex;
+    flex-direction: column;
   }
   .prodList {
     border: none;
+    text-align: center;
     display: flex;
     justify-content: center;
+    flex-direction: column;
   }
   .prodList_title {
     border: 1px solid black;
     border-radius: 30px;
     box-shadow: 2px 2px 5px black;
-    background-color: rgba(222, 252, 252, .7);
-    position: absolute;
-    width: 1050px;
-    top: 20px;
-    font-size: 30px;
+    background-color: rgba(222, 252, 252, 0.7);
+    position: relative;
+    text-align: center;
+    top: 0;
+    width: inherit;
+    margin: 3rem;
   }
   .btn {
     background: linear-gradient(#c8dbdb, #798888);
@@ -273,24 +382,28 @@ tr {
     font-weight: bold;
     font-style: italic;
   }
+  .btn:focus {
+    outline: none;
+  }
   .productForm {
     border: 1px solid black;
     border-radius: 30px;
     box-shadow: 2px 2px 5px black;
-    background-color: rgba(222, 252, 252, .7);
+    background-color: rgba(222, 252, 252, 0.7);
     padding: 5px 20px 30px;
-    position: fixed;
-    left: 85px;
-    top: 150px;
-    height: 195px;
-    font-size: 23px;
-    width: 280px;
+    position: relative;
+    height: 21vh;
+    margin: 1rem;
+    width: 25vw;
+    display: flex;
+    flex-direction: column;
   }
   #name {
-    font-size: 19px;
     margin-bottom: 5px;
     border-radius: 10px;
     padding-left: 15px;
+    width: 20vw;
+    height: 3vh;
   }
   #name:focus {
     outline: none;
@@ -298,23 +411,27 @@ tr {
     box-shadow: 0 0 15px darkorange;
   }
   #price {
-    font-size: 19px;
     margin-bottom: 5px;
     border-radius: 10px;
     padding-left: 15px;
+    width: 20vw;
+    height: 3vh;
   }
   #price:focus {
     outline: none;
     border: 2px solid orange;
     box-shadow: 0 0 15px darkorange;
   }
+  .buttons {
+    margin-top: 0.5rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
   .productForm_add {
-    position: absolute;
-    left: 40px;
-    height: 40px;
-    width: 90px;
-    top: 170px;
-    font-size: 20px;
+    position: inherit;
+    height: 3.5vh;
+    width: 11vw;
     box-shadow: 0 3px 5px black;
   }
   .productForm_add:focus {
@@ -326,12 +443,9 @@ tr {
     box-shadow: 0 2px 3px black;
   }
   .productForm_reset {
-    position: absolute;
-    left: 190px;
-    height: 40px;
-    width: 90px;
-    top: 170px;
-    font-size: 20px;
+    position: inherit;
+    height: 3.5vh;
+    width: 11vw;
     box-shadow: 0 3px 5px black;
   }
   .productForm_reset:focus {
@@ -346,23 +460,31 @@ tr {
     outline: none;
     box-shadow: 0 3px 5px black;
   }
-  .searchBar {
+  .searchBar_Show {
     border: 1px solid black;
     border-radius: 30px;
     box-shadow: 2px 2px 5px black;
-    background-color: rgba(222, 252, 252, .7);
-    position: fixed;
-    left: 85px;
-    top: 408px;
-    font-size: 23px;
-    width: 320px;
-    height: 160px;
+    background-color: rgba(222, 252, 252, 0.7);
+    position: relative;
+    height: 17vh;
+    width: 25vw;
+    margin: 1rem;
+  }
+  .searchBar_Hide {
+    border: 1px solid black;
+    border-radius: 30px;
+    box-shadow: 2px 2px 5px black;
+    background-color: rgba(222, 252, 252, 0.7);
+    position: relative;
+    height: 9vh;
+    width: 25vw;
+    margin: 1rem;
   }
   .searchBar_input {
-    font-size: 19px;
-    margin-bottom: 5px;
     border-radius: 10px;
     padding-left: 15px;
+    width: 15vw;
+    height: 3vh;
   }
   .searchBar_input:focus {
     outline: none;
@@ -373,32 +495,26 @@ tr {
     border: 1px solid black;
     border-radius: 30px;
     box-shadow: 2px 2px 5px black;
-    background-color: rgba(222, 252, 252, .7);
-    position: absolute;
-    left: 500px;
-    top: 150px;
-    width: 620px;
+    background-color: rgba(222, 252, 252, 0.7);
+    position: relative;
+    width: 50vw;
     height: max-content;
-    font-size: 23px;
-    padding-bottom: 25px;
+    margin: 1rem;
+  }
+  .noProducts {
+    border: 1px solid black;
+    border-radius: 30px;
+    box-shadow: 2px 2px 5px black;
+    background-color: rgba(222, 252, 252, 0.7);
+    position: relative;
+    width: 50vw;
+    height: 60px;
+    padding-top: 2rem;
+    font-style: italic;
+    margin: 1rem;
   }
   .productTable_table {
     display: inline-table;
     width: inherit;
   }
-  .productTable_total {
-    border: 1px solid black;
-    border-radius: 30px;
-    box-shadow: 2px 2px 5px black;
-    background-color: rgba(222, 252, 252, .7);
-    position: fixed;
-    left: 84px;
-    top: 600px;
-    font-size: 28px;
-    width: 320px;
-    height: 105px;
-  }
 }
-
-
-

@@ -1,2 +1,3 @@
 export const CREATE_PRODS = 'CREATE_PRODS'
 export const REMOVE_PROD = 'REMOVE_PROD'
+export const SEARCH_HIDDEN = 'SEARCH_HIDDEN'

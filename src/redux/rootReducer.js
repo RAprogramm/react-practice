@@ -4,5 +4,5 @@ import { reducer as formReducer } from 'redux-form'
 
 export const rootReducer = combineReducers({
   productsReducer: prodListReducer,
-  form: formReducer
+  form: formReducer,
 })
