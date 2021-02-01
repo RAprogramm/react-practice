@@ -1,4 +1,4 @@
-import {CREATE_PRODS, REMOVE_PROD} from './types'
+import {CREATE_PRODS, REMOVE_PROD, SEARCH_HIDDEN} from './types'
 
 export function createPost(product) {
   return {
@@ -11,5 +11,12 @@ export function removeProd(id) {
   return {
     type: REMOVE_PROD,
     payload: id
+  }
+}
+
+export function showSearchBar(hiddenBar) {
+  return {
+    type: SEARCH_HIDDEN,
+    hiddenBar
   }
 }
